@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../img/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
@@ -694,6 +694,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../Radarr/radarr-setup-quality-profiles-german-en/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to set up Quality Profiles (German)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../Radarr/Radarr-import-custom-formats/" class="md-nav__link">
         
   
@@ -767,10 +788,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
         
           
-          <label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -781,8 +802,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
             <span class="md-nav__icon md-icon"></span>
             Tips
           </label>
@@ -800,6 +821,27 @@
   
   <span class="md-ellipsis">
     How to Merge Quality
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Radarr/Tips/How-to-order-Quality-Source/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Order Quality Sources
   </span>
   
 
@@ -1206,6 +1248,27 @@
   
   <span class="md-ellipsis">
     How to Merge Quality
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Sonarr/Tips/How-to-order-Quality-Source/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    How to Order Quality Sources
   </span>
   
 
@@ -3552,7 +3615,7 @@
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link"></a></h2>
 <h3 id="hardlinks-limitations">Hardlinks Limitations<a class="headerlink" href="#hardlinks-limitations" title="Permanent link"></a></h3>
 <div class="admonition danger">
-<p class="admonition-title">- You <u>CAN'T</u> create hardlinks for directories <img alt="‼" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/203c.svg" title=":bangbang:" /><br>- You <u>CAN'T</u> hardlink across separate file systems, partitions, volumes or mounts <img alt="‼" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/203c.svg" title=":bangbang:" /><br>- Some file systems, such as exFAT, are known not to support hardlinks and should be avoided (double-check if you are unsure!)</p>
+<p class="admonition-title">- You <u>CAN'T</u> create hardlinks for directories <img alt="‼" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/203c.svg" title=":bangbang:" /><br>- You <u>CAN'T</u> hardlink across separate file systems, partitions, volumes or mounts <img alt="‼" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/203c.svg" title=":bangbang:" /><br>- Some file systems, such as exFAT, are known not to support hardlinks and should be avoided (double-check if you are unsure!).</p>
 </div>
 <h3 id="what-are-hardlinks">What are Hardlinks<a class="headerlink" href="#what-are-hardlinks" title="Permanent link"></a></h3>
 <details class="question">
@@ -3560,20 +3623,20 @@
 <ul>
 <li>[<strong>Short answer</strong>] Having a file in multiple locations without using double your storage space.</li>
 <li>
-<p>[<strong>Long answer</strong>] Hardlinks are a way for a copy operation to be instant and not consume space for those additional copies.</p>
-<p>Every file is a hardlink: some metadata that points at blocks on the file system, <strong>which is why they're restricted to the same file system</strong>. There can be as many metadata files pointing at those blocks as needed and the blocks know how many links point to them. Once the blocks have 0 links, they're considered deleted.</p>
+<p>[<strong>Long answer</strong>] Hardlinks allow a copy operation to be instant and not consume space for those additional copies.</p>
+<p>Every file is a hardlink: some metadata that points at blocks on the file system, <strong>which is why they're restricted to the same file system</strong>. There can be as many metadata files pointing at those blocks as needed, and the blocks know how many links point to them. Once the blocks have 0 links, they're considered deleted.</p>
 <p>This means:</p>
 <ul>
 <li>
-<p>You can delete any "copy" without impacting other instances (hardlinks) of it.</p>
+<p>You can delete any "copy" without impacting other instances (hardlinks).</p>
 <p>Your download client can remove its "copy" without impacting the library "copy". The library "copy" can also be removed by Plex, Sonarr/Radarr, or manually without impacting your download client's "copy".</p>
 </li>
 <li>
-<p>Space is only reclaimed once all "copies" of data that are hardlinked are deleted.</p>
+<p>Space is only reclaimed once all "copies" of hardlinked data are deleted.</p>
 </li>
 <li>
 <p>Modifying any copy of a hardlinked file will impact all "copies".</p>
-<p>For example, modifying the id3 tags of a .mp3 download after import would modify the download client "copy", resulting in breaking the torrent.</p>
+<p>For example, modifying the id3 tags of a .mp3 download after import would change the download client "copy", breaking the torrent.</p>
 </li>
 </ul>
 <p><a href="https://en.wikipedia.org/wiki/Hard_link" rel="noopener noreferrer" target="_blank">More info from Wikipedia, the free encyclopedia</a></p>
@@ -3586,7 +3649,7 @@
 <h3 id="what-are-instant-moves-atomic-moves">What are Instant Moves (Atomic Moves)<a class="headerlink" href="#what-are-instant-moves-atomic-moves" title="Permanent link"></a></h3>
 <details class="question">
 <summary><strong>What are Instant Moves (Atomic Moves)?</strong> - [Click to show/hide]</summary>
-<p>A real move and not a copy file from the download folder to the media folder and then deleting the file from the download folder.</p>
+<p>This is a real move, not a copying of a file from the download folder to the media folder and then deleting the file from the download folder.</p>
 </details>
 <h3 id="what-are-the-starr-apps">What are the Starr Apps<a class="headerlink" href="#what-are-the-starr-apps" title="Permanent link"></a></h3>
 <details class="question">
@@ -3624,7 +3687,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 1, 2024 13:36:40</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">December 24, 2024 23:53:34</span>
   </span>
 
     
@@ -3734,7 +3797,7 @@
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.top", "content.code.copy", "content.action.edit", "content.action.view", "content.tooltips"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
